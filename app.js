@@ -28,8 +28,6 @@ $(document).ready(function() {   //ready is an event, when event is complete, ru
   $('.yellowblock').append('<div class ="block" id="yellow"' + "<p></p>");
 
 //on Block Click
-  $('.colorPicked').append("<p>You picked Red! </p>");
-
 
   $('.redblock').on('click', function(event) {
      $('.colorPicked').append("<p>You picked Red! </p>");
