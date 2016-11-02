@@ -1,5 +1,7 @@
 console.log("This works ");
 
+$(document).ready(function() {   //ready is an event, when event is complete, run annonymous function "event listener"
+
 //empty array to hold the colors
 var colors = [];
 
@@ -19,13 +21,13 @@ colors.push(blue);
 colors.push(yellow);
 
 
-$(document).ready(function() {   //ready is an event, when event is complete, run annonymous function "event listener"
-
 //appending blocks to DOM
   $('.redblock').append('<div class ="block" id="red"' + "<p></p>");
   $('.greenblock').append('<div class ="block" id="green"' + "<p></p>");
   $('.blueblock').append('<div class ="block" id="blue"' + "<p></p>");
   $('.yellowblock').append('<div class ="block" id="yellow"' + "<p></p>");
+  $('.colorPicked').append('');
+
 
 //on Block Click
 
