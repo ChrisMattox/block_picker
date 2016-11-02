@@ -1,5 +1,3 @@
-console.log("This works ");
-
 $(document).ready(function() {   //ready is an event, when event is complete, run annonymous function "event listener"
 
 //empty array to hold the colors
@@ -26,42 +24,65 @@ colors.push(yellow);
   $('.greenblock').append('<div class ="block" id="green"' + "<p></p>");
   $('.blueblock').append('<div class ="block" id="blue"' + "<p></p>");
   $('.yellowblock').append('<div class ="block" id="yellow"' + "<p></p>");
-  $('.colorPicked').append('');
 
+resetPage();
+function resetPage() {
+
+//appends random color to H2
+  var newColor = randomNumber(0, 3);
+    console.log(newColor);
+      if (newColor == 0){
+            newColor = "red";
+      }  else if (newColor == 1) {
+            newColor = "green";
+      }  else if (newColor == 2) {
+            newColor = "yellow";
+      }  else if (newColor == 3) {
+            newColor = "blue";
+      }
+    $('.colorPicked').append('<h2>Please select the ' + newColor + ' block</h2>');
 
 //on Block Click
 
-  $('.redblock').on('click', function(event) {
-     $('.colorPicked').append("<p>You picked Red! </p>");
-      alert("You clicked red!");
+  $('.redblock').on('click', function() {
+    if (newColor == "red") {
+     $('.colorPicked').append("<p>You picked correctly Red!</p>");
+     resetPage();
+   } else {
+     $('.colorPicked').append("<p> You a dummy! </p>");
+   }
     });
 
-  $('.greenblock').on('click', function(event) {
-      $('.colorPicked').append("<p>You picked Green! </p>");
-      alert("You clicked green!");
+  $('.greenblock').on('click', function() {
+    if (newColor == "green") {
+     $('.colorPicked').append("<p>You correctly picked Green!</p>");
+        resetPage();
+   } else {
+      $('.colorPicked').append("<p> You a dummy! </p>");
+   }
     });
 
-  $('.blueblock').on('click', function(event) {
-      $('.colorPicked').append("<p>You picked Blue! </p>");
-      alert("You clicked blue!");
+  $('.blueblock').on('click', function() {
+    if (newColor == "blue") {
+     $('.colorPicked').append("<p>You correctly picked Blue!</p>");
+        resetPage();
+   } else {
+      $('.colorPicked').append("<p> You a dummy! </p>");
+   }
     });
 
-  $('.yellowblock').on('click', function(event) {
-      $('.colorPicked').append("<p>You picked Yellow! </p>");
-      alert("You clicked yellow!");
-
-
+  $('.yellowblock').on('click', function() {
+    if (newColor == "yellow") {
+     $('.colorPicked').append("<p>You correctly picked Yellow!</p>");
+        resetPage();
+   } else {
+      $('.colorPicked').append("<p> You a dummy! </p>");
+   }
     });
-
+}
 
 // Here is a handy function to generate a random number given a minimum and maximum.
     function randomNumber(min, max){
     return Math.floor(Math.random() * (1 + max - min) + min);
-
-}
-  console.log(randomNumber(1,3));
-// Function to generate random color
-    // function getRandomColor(this.color) {
-    //
-    // }
-  });
+    }
+    });

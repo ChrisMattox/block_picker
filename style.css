@@ -6,27 +6,41 @@ h1 {
   color: teal;
 }
 
+p {
+  display: block;
+  display: inline-flex;
+}
+
+.centered {
+ display: inline-flex;
+ margin-left: 50px;
+}
+
+
 #red {
   width: 100px;
   height: 100px;
   background-color: red;
+  border: 2px solid white;
 }
 
 #green {
   width: 100px;
   height: 100px;
   background-color: green;
+  border: 2px solid white;
 }
 
 #blue {
   width: 100px;
   height: 100px;
   background-color: blue;
-  align-items: center;
+  border: 2px solid white;
 }
 
 #yellow {
   width: 100px;
   height: 100px;
   background-color: yellow;
+  border: 2px solid white;
 }
