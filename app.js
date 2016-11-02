@@ -6,7 +6,7 @@ var colors = [];
 function Color(name, color) {
   this.name = name;
   this.color = color;
-  }
+}
 
 var red = new Color("red", "red");
 var green = new Color("green", "green");
@@ -20,69 +20,78 @@ colors.push(yellow);
 
 
 //appending blocks to DOM
-  $('.redblock').append('<div class ="block" id="red"' + "<p></p>");
-  $('.greenblock').append('<div class ="block" id="green"' + "<p></p>");
-  $('.blueblock').append('<div class ="block" id="blue"' + "<p></p>");
-  $('.yellowblock').append('<div class ="block" id="yellow"' + "<p></p>");
+$('.redblock').append('<div class ="block" id="red"' + "<p></p>");
+$('.greenblock').append('<div class ="block" id="green"' + "<p></p>");
+$('.blueblock').append('<div class ="block" id="blue"' + "<p></p>");
+$('.yellowblock').append('<div class ="block" id="yellow"' + "<p></p>");
+
+var newColor = randomNumber(0, 3);
 
 resetPage();
 function resetPage() {
 
-//appends random color to H2
-  var newColor = randomNumber(0, 3);
-    console.log(newColor);
-      if (newColor == 0){
-            newColor = "red";
-      }  else if (newColor == 1) {
-            newColor = "green";
-      }  else if (newColor == 2) {
-            newColor = "yellow";
-      }  else if (newColor == 3) {
-            newColor = "blue";
-      }
-    $('.colorPicked').append('<h2>Please select the ' + newColor + ' block</h2>');
+  //assigns random number to a color
+  newColor = randomNumber(0, 3);
+  console.log(newColor);
+  if (newColor == 0){
+    newColor = "red";
+  }  else if (newColor == 1) {
+    newColor = "green";
+  }  else if (newColor == 2) {
+    newColor = "yellow";
+  }  else if (newColor == 3) {
+    newColor = "blue";
+  }
+  //appends that color to the DOM
+  $('.colorPicked').append('<h2>Please select the ' + newColor + ' block</h2>');
+
+}
+
 
 //on Block Click
 
-  $('.redblock').on('click', function() {
-    if (newColor == "red") {
-     $('.colorPicked').append("<p>You picked correctly Red!</p>");
-     resetPage();
-   } else {
-     $('.colorPicked').append("<p> You a dummy! </p>");
-   }
-    });
+$('.redblock').on('click', function() {
+  if (newColor == "red") {
+    $('.colorPicked').empty();
+    $('.colorPicked').append("<p>You picked correctly Red!</p>");
+    resetPage();
+  } else {
+    $('.colorPicked').append("<p> You a dummy! </p>");
+  }
+});
 
-  $('.greenblock').on('click', function() {
-    if (newColor == "green") {
-     $('.colorPicked').append("<p>You correctly picked Green!</p>");
-        resetPage();
-   } else {
-      $('.colorPicked').append("<p> You a dummy! </p>");
-   }
-    });
+$('.greenblock').on('click', function() {
+  if (newColor == "green") {
+    $('.colorPicked').empty();
+    $('.colorPicked').append("<p>You correctly picked Green!</p>");
+    resetPage();
+  } else {
+    $('.colorPicked').append("<p> You a dummy! </p>");
+  }
+});
 
-  $('.blueblock').on('click', function() {
-    if (newColor == "blue") {
-     $('.colorPicked').append("<p>You correctly picked Blue!</p>");
-        resetPage();
-   } else {
-      $('.colorPicked').append("<p> You a dummy! </p>");
-   }
-    });
+$('.blueblock').on('click', function() {
+  if (newColor == "blue") {
+    $('.colorPicked').empty();
+    $('.colorPicked').append("<p>You correctly picked Blue!</p>");
+    resetPage();
+  } else {
+    $('.colorPicked').append("<p> You a dummy! </p>");
+  }
+});
 
-  $('.yellowblock').on('click', function() {
-    if (newColor == "yellow") {
-     $('.colorPicked').append("<p>You correctly picked Yellow!</p>");
-        resetPage();
-   } else {
-      $('.colorPicked').append("<p> You a dummy! </p>");
-   }
-    });
-}
+$('.yellowblock').on('click', function() {
+  if (newColor == "yellow") {
+    $('.colorPicked').empty();
+    $('.colorPicked').append("<p>You correctly picked Yellow!</p>");
+    resetPage();
+  } else {
+    $('.colorPicked').append("<p> You a dummy! </p>");
+  }
+});
 
 // Here is a handy function to generate a random number given a minimum and maximum.
-    function randomNumber(min, max){
-    return Math.floor(Math.random() * (1 + max - min) + min);
-    }
-    });
+function randomNumber(min, max){
+  return Math.floor(Math.random() * (1 + max - min) + min);
+}
+});
