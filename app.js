@@ -12,11 +12,13 @@ var red = new Color("red", "red");
 var green = new Color("green", "green");
 var blue = new Color("blue", "blue");
 var yellow = new Color("yellow", "yellow");
+var black = new Color("black", "black");
 
 colors.push(red);
 colors.push(green);
 colors.push(blue);
 colors.push(yellow);
+colors.push(black);
 
 
 //appending blocks to DOM
@@ -43,30 +45,19 @@ function resetPage() {
     newColor = "blue";
   }
   //appends that color to the DOM
-  $('.colorPicked').append('<h2>Please select the ' + newColor + ' block</h2>');
+  $('.colorPicked').append('<h2>Please select the ' + newColor + ' block!</h2>');
 
 }
 
-
 //on Block Click
-// $('.redblock').on('click', function() {
-//   if (newColor == "red") {
-//     $('.colorPicked').empty();
-//     $('.colorPicked').append("<p>You picked correctly!</p>");
-//     resetPage();
-//   } else {
-//     $('.colorPicked').append("<p> You a dummy! </p>" + " ");
-//   }
-// });
 
 $('.redblock').on('click', function() {
   if (newColor == "red") {
-// empty differs from removed, because with remove the DIV color picked would no longer exist
     $('.colorPicked').empty();
     $('.colorPicked').append("<p>You picked correctly Red!</p>");
     resetPage();
   } else {
-    $('.colorPicked').append("<p> You a dummy! </p>" + " ");
+    $('.colorPicked').append("<p> You a dummy! </p>");
   }
 });
 
@@ -76,7 +67,7 @@ $('.greenblock').on('click', function() {
     $('.colorPicked').append("<p>You correctly picked Green!</p>");
     resetPage();
   } else {
-    $('.colorPicked').append("<p> You a dummy! </p>" + " ");
+    $('.colorPicked').append("<p> You a dummy! </p>");
   }
 });
 
@@ -86,7 +77,7 @@ $('.blueblock').on('click', function() {
     $('.colorPicked').append("<p>You correctly picked Blue!</p>");
     resetPage();
   } else {
-    $('.colorPicked').append("<p> You a dummy! </p>" + " ");
+    $('.colorPicked').append("<p> You a dummy! </p>");
   }
 });
 
@@ -96,7 +87,7 @@ $('.yellowblock').on('click', function() {
     $('.colorPicked').append("<p>You correctly picked Yellow!</p>");
     resetPage();
   } else {
-    $('.colorPicked').append("<p> You a dummy! </p>" + " ");
+    $('.colorPicked').append("<p> You a dummy! </p>");
   }
 });
 
