@@ -87,7 +87,7 @@ $('.yellowblock').on('click', function() {
     $('.colorPicked').append("<p>You correctly picked Yellow!</p>");
     resetPage();
   } else {
-    $('.colorPicked').append("<p> You a dummy! </p>");
+    $('.colorPicked').append("<p> You a silly dummy! </p>");
   }
 });
 
